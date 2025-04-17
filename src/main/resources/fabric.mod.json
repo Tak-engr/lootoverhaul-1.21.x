@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
 	"id": "lootoverhaul",
-	"version": "1.0.0",
-	"name": "lootoverhaul",
-	"description": "This is a Loot Overhaul for Minecraft!",
+	"version": "1.0.1",
+	"name": "Loot Overhaul",
+	"description": "This is a Loot Overhaul for Minecraft! I made it for Tiffu909!",
 	"authors": [
 		"Takumii"
 	],
@@ -11,7 +11,7 @@
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "UCF",
+	"license": "UCF (All Rights Reserved)",
 	"icon": "assets/lootoverhaul/icon.png",
 	"environment": "*",
 	"entrypoints": {
