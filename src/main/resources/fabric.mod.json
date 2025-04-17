@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "lootoverhaul",
+	"version": "${version}",
+	"name": "lootoverhaul",
+	"description": "This is a Loot Overhaul for Minecraft!",
+	"authors": [
+		"Takumii"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "UCF",
+	"icon": "assets/lootoverhaul/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.takumii.lootoverhaul.Lootoverhaul"
+		],
+		"fabric-datagen": [
+			"net.takumii.lootoverhaul.LootoverhaulDataGenerator"
+		],
+		"client": [
+			"net.takumii.lootoverhaul.LootOverhaulClient"
+		]
+	},
+	"mixins": [
+		"lootoverhaul.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.13",
+		"minecraft": "~1.21.5",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

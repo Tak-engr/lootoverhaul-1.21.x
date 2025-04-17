@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "net.takumii.lootoverhaul.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ExampleMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
