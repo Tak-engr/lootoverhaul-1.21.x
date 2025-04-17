@@ -2,28 +2,28 @@ package net.takumii.lootoverhaul.util;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.loot.v3.LootTableSource;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
-import net.minecraft.loot.function.SetEnchantmentsLootFunction;
-import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-import net.minecraft.loot.provider.number.LootNumberProvider;
 import net.minecraft.registry.RegistryKey;
-
-import java.util.HashMap;
-import java.util.Map;
+import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.util.Identifier;
 
 public class ModLootTableModifiers {
+
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register(ModLootTableModifiers::modifyLootTable);
     }
 
-    private static void modifyLootTable(RegistryKey<LootTable> id, LootTable.Builder builder, LootTableSource source, Object unused) {
+    private static void modifyLootTable(
+            RegistryKey<LootTable> id,
+            LootTable.Builder builder,
+            LootTableSource source,
+            RegistryWrapper.WrapperLookup registries
+    ) {
         if (!source.isBuiltin()) return;
 
         String path = id.getValue().getPath();
@@ -53,6 +53,8 @@ public class ModLootTableModifiers {
             builder.pool(LootPool.builder()
                     .with(ItemEntry.builder(Items.PORKCHOP)
                             .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3, 5))))
+                    .with(ItemEntry.builder(Items.CARROT)
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 4))))
                     .build());
         }
 
@@ -94,16 +96,14 @@ public class ModLootTableModifiers {
                     .build());
         }
 
-        // Chest Loots
+        // General loot chests — custom pools only
         if (path.startsWith("chests/")) {
-
             builder.pool(LootPool.builder()
                     .with(ItemEntry.builder(Items.IRON_INGOT))
                     .with(ItemEntry.builder(Items.IRON_PICKAXE))
                     .with(ItemEntry.builder(Items.GOLDEN_CHESTPLATE))
                     .with(ItemEntry.builder(Items.GOLDEN_BOOTS))
                     .with(ItemEntry.builder(Items.LEAD))
-                    .with(ItemEntry.builder(Items.ENCHANTED_BOOK))
                     .with(ItemEntry.builder(Items.COOKED_PORKCHOP))
                     .with(ItemEntry.builder(Items.DIAMOND))
                     .with(ItemEntry.builder(Items.EXPERIENCE_BOTTLE))
