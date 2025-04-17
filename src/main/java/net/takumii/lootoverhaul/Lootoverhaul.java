@@ -2,6 +2,7 @@ package net.takumii.lootoverhaul;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.takumii.lootoverhaul.util.ModLootTableModifiers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,6 +13,11 @@ public class Lootoverhaul implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		System.out.println("Loot Overhaul has loaded!");
+		ModLootTableModifiers.modifyLootTables();
+
+
+
 
 	}
 }

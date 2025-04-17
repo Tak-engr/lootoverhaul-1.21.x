@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "lootoverhaul",
-	"version": "${version}",
+	"version": "1.0.0",
 	"name": "lootoverhaul",
 	"description": "This is a Loot Overhaul for Minecraft!",
 	"authors": [
