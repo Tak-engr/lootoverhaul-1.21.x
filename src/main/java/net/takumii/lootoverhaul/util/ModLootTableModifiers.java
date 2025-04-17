@@ -32,7 +32,7 @@ public class ModLootTableModifiers {
         if (path.equals("entities/chicken")) {
             builder.pool(LootPool.builder()
                     .with(ItemEntry.builder(Items.CHICKEN)
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3, 5))))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 8))))
                     .build());
         }
 
@@ -40,11 +40,15 @@ public class ModLootTableModifiers {
         if (path.equals("entities/cow")) {
             builder.pool(LootPool.builder()
                     .with(ItemEntry.builder(Items.BEEF)
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2, 7))))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 7))))
                     .build());
             builder.pool(LootPool.builder()
                     .with(ItemEntry.builder(Items.LEATHER)
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2, 8))))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 8))))
+                    .build());
+            builder.pool(LootPool.builder()
+                    .with(ItemEntry.builder(Items.WHEAT)
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 8))))
                     .build());
         }
 
@@ -92,6 +96,10 @@ public class ModLootTableModifiers {
                     .with(ItemEntry.builder(Items.BREAD))
                     .with(ItemEntry.builder(Items.TORCH))
                     .with(ItemEntry.builder(Items.OAK_LOG))
+                    .with(ItemEntry.builder(Items.LEATHER_BOOTS))
+                    .with(ItemEntry.builder(Items.LEATHER))
+                    .with(ItemEntry.builder(Items.CHAINMAIL_HELMET))
+                    .with(ItemEntry.builder(Items.OBSIDIAN))
                     .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 2)))
                     .build());
         }
@@ -109,6 +117,9 @@ public class ModLootTableModifiers {
                     .with(ItemEntry.builder(Items.EXPERIENCE_BOTTLE))
                     .with(ItemEntry.builder(Items.IRON_BOOTS))
                     .with(ItemEntry.builder(Items.IRON_HOE))
+                    .with(ItemEntry.builder(Items.LEATHER))
+                    .with(ItemEntry.builder(Items.CHAINMAIL_HELMET))
+                    .with(ItemEntry.builder(Items.OBSIDIAN))
                     .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 6)))
                     .build());
         }
