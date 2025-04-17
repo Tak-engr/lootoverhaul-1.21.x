@@ -15,6 +15,7 @@ public class Lootoverhaul implements ModInitializer {
 	public void onInitialize() {
 		System.out.println("Loot Overhaul has loaded!");
 		ModLootTableModifiers.modifyLootTables();
+		LootXpBoostHandler.register();
 
 
 
